@@ -46,11 +46,10 @@ RUN	pecl install \
 	;
 
 
-RUN apk add $PHPIZE_DEPS libstdc++ zlib-dev linux-headers \
-    && CPPFLAGS="-Wno-maybe-uninitialized" pecl install grpc-1.35.0 \
-    && docker-php-ext-enable grpc
+RUN apk add $PHPIZE_DEPS libstdc++ zlib-dev linux-headers
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
-RUN pecl clear-cache
+RUN install-php-extensions grpc
 
 RUN docker-php-ext-enable \
 		apcu \
@@ -67,8 +66,12 @@ RUN	runDeps="$( \
 	\
 	apk del .build-deps
 
+RUN apk add git
+
 COPY docker/php/docker-healthcheck.sh /usr/local/bin/docker-healthcheck
 RUN chmod +x /usr/local/bin/docker-healthcheck
+
+
 
 HEALTHCHECK --interval=10s --timeout=3s --retries=3 CMD ["docker-healthcheck"]
 

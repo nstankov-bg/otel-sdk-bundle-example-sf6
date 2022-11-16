@@ -1,7 +1,4 @@
 {
-    "clue/stream-filter": {
-        "version": "v1.5.0"
-    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -19,12 +16,6 @@
     },
     "doctrine/lexer": {
         "version": "1.2.1"
-    },
-    "google/protobuf": {
-        "version": "v3.19.0"
-    },
-    "grpc/grpc": {
-        "version": "1.39.0"
     },
     "kriswallsmith/buzz": {
         "version": "1.2",
@@ -44,9 +35,6 @@
     "nikic/php-parser": {
         "version": "v4.13.0"
     },
-    "nyholm/dsn": {
-        "version": "2.0.0"
-    },
     "nyholm/psr7": {
         "version": "1.4",
         "recipe": {
@@ -59,29 +47,20 @@
             "config/packages/nyholm_psr7.yaml"
         ]
     },
-    "open-telemetry/opentelemetry": {
-        "version": "dev-main"
+    "open-telemetry/contrib-sdk-bundle": {
+        "version": "0.0.4"
     },
     "open-telemetry/opentelemetry-php-contrib": {
         "version": "dev-sf_bundle"
     },
-    "php-http/discovery": {
-        "version": "1.14.1"
-    },
     "php-http/httplug": {
         "version": "2.2.0"
-    },
-    "php-http/message": {
-        "version": "1.12.0"
     },
     "php-http/message-factory": {
         "version": "v1.0.2"
     },
     "php-http/promise": {
         "version": "1.1.0"
-    },
-    "promphp/prometheus_client_php": {
-        "version": "v2.3.0"
     },
     "psr/cache": {
         "version": "2.0.0"
@@ -229,12 +208,6 @@
         "version": "v1.23.0"
     },
     "symfony/polyfill-mbstring": {
-        "version": "v1.23.1"
-    },
-    "symfony/polyfill-php73": {
-        "version": "v1.23.0"
-    },
-    "symfony/polyfill-php80": {
         "version": "v1.23.1"
     },
     "symfony/polyfill-php81": {

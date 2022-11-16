@@ -6,21 +6,20 @@ use OpenTelemetry\API\Trace\SpanInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use OpenTelemetry\SDK\Trace\Tracer;
+use OpenTelemetry\SDK\Trace\TracerProvider;
 
 class HelloController extends AbstractController
 {
     private const TEMPLATE = 'hello/index.html.twig';
 
-    private Tracer $tracer;
     private string $jaegerGuiUrl;
     private string $zipkinGuiUrl;
 
-     public function __construct(Tracer $tracer, string $jaegerGuiUrl, string $zipkinGuiUrl)
+     public function __construct(TracerProvider $provider, string $jaegerGuiUrl, string $zipkinGuiUrl)
      {
-         $this->tracer = $tracer;
          $this->jaegerGuiUrl = $jaegerGuiUrl;
          $this->zipkinGuiUrl = $zipkinGuiUrl;
+         $this->tracer = $provider->getTracer('io.opentelemetry.contrib.php');
      }
 
      /**
