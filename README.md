@@ -1,3 +1,5 @@
+# PORT TO SYMFONY 6 + Uses fork of v0.0.14 of open-telemetry/contrib-sdk-bundle, because whatever's happening in v0.0.15 completely messes things up with autowiring.
+
 # OTEL SDK-BUNDLE EXAMPLE
 
 This is a Symfony demo application for the OpenTelemetry SdkBundle.
